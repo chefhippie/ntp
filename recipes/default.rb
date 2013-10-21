@@ -24,7 +24,7 @@ node["ntp"]["packages"].each do |name|
 end
 
 template node["ntp"]["sysconfig_file"] do
-  source "sshd_config.conf.erb"
+  source "sysconfig.conf.erb"
   owner "root"
   group "root"
   mode 0644
