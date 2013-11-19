@@ -49,7 +49,7 @@ template node["ntp"]["config_file"] do
   notifies :restart, "service[ntp]"
 end
 
-directory node["ntp"]["config_file"] do
+directory node["ntp"]["stats_dir"] do
   owner node["ntp"]["owner"]
   group node["ntp"]["group"]
   recursive true
