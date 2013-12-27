@@ -29,11 +29,23 @@ default["ntp"]["servers"] = %w(
 )
 
 default["ntp"]["service_name"] = "ntp"
-default["ntp"]["sysconfig_file"] = "/etc/sysconfig/ntp"
+
+default["ntp"]["sysconfig_file"] = value_for_platform_family(
+  "debian" => "/etc/default/ntp",
+  "ubuntu" => "/etc/default/ntp",
+  "suse" => "/etc/sysconfig/ntp"
+)
+
 default["ntp"]["config_file"] = "/etc/ntp.conf"
 default["ntp"]["listen"] = "0.0.0.0"
 default["ntp"]["log_file"] = "/var/log/ntp"
-default["ntp"]["drift_file"] = "/var/lib/ntp/drift/ntp.drift"
+
+default["ntp"]["sysconfig_file"] = value_for_platform_family(
+  "debian" => "/var/lib/ntp/ntp.drift",
+  "ubuntu" => "/var/lib/ntp/ntp.drift",
+  "suse" => "/var/lib/ntp/drift/ntp.drift"
+)
+
 default["ntp"]["stats_dir"] = "/var/log/ntpstats"
 default["ntp"]["owner"] = "ntp"
 default["ntp"]["group"] = "ntp"
