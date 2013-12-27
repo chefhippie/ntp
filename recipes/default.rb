@@ -34,9 +34,9 @@ template node["ntp"]["sysconfig_file"] do
   )
 
   notifies :restart, "service[ntp]"
-  
-  only_if do
-    node["ntp"]["sysconfig_file"]
+
+  not_if do
+    node["ntp"]["sysconfig_file"].empty?
   end
 end
 
@@ -51,9 +51,9 @@ template node["ntp"]["config_file"] do
   )
 
   notifies :restart, "service[ntp]"
-  
-  only_if do
-    node["ntp"]["config_file"]
+
+  not_if do
+    node["ntp"]["config_file"].empty?
   end
 end
 
