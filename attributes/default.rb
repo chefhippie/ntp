@@ -40,7 +40,7 @@ default["ntp"]["config_file"] = "/etc/ntp.conf"
 default["ntp"]["listen"] = "0.0.0.0"
 default["ntp"]["log_file"] = "/var/log/ntp"
 
-default["ntp"]["sysconfig_file"] = value_for_platform_family(
+default["ntp"]["drift_file"] = value_for_platform_family(
   "debian" => "/var/lib/ntp/ntp.drift",
   "ubuntu" => "/var/lib/ntp/ntp.drift",
   "suse" => "/var/lib/ntp/drift/ntp.drift"
