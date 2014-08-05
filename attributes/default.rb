@@ -37,7 +37,7 @@ default["ntp"]["sysconfig_file"] = value_for_platform_family(
 )
 
 default["ntp"]["config_file"] = "/etc/ntp.conf"
-default["ntp"]["listen"] = "0.0.0.0"
+default["ntp"]["listen"] = "127.0.0.1"
 default["ntp"]["log_file"] = "/var/log/ntp"
 
 default["ntp"]["drift_file"] = value_for_platform_family(
