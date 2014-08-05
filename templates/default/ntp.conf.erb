@@ -12,6 +12,9 @@ keys /etc/ntp.keys
 trustedkey 1
 requestkey 1
 
+interface ignore wildcard
+interface listen <%= @listen %>
+
 restrict -4 limited default kod notrap nomodify nopeer noquery
 restrict 127.0.0.1
 
