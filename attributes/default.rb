@@ -32,7 +32,7 @@ default["ntp"]["service_name"] = value_for_platform(
   "suse" => {
     "12.0" => "ntpd",
     "default" => "ntp"
-  }
+  },
   "default" => "ntp"
 )
 
