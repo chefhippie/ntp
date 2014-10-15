@@ -28,7 +28,13 @@ default["ntp"]["servers"] = %w(
   3.de.pool.ntp.org
 )
 
-default["ntp"]["service_name"] = "ntp"
+default["ntp"]["service_name"] = value_for_platform(
+  "suse" => {
+    "12.0" => "ntpd",
+    "default" => "ntp"
+  }
+  "default" => "ntp"
+)
 
 default["ntp"]["sysconfig_file"] = value_for_platform_family(
   "debian" => "/etc/default/ntp",
