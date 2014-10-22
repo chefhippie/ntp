@@ -29,10 +29,7 @@ default["ntp"]["servers"] = %w(
 )
 
 default["ntp"]["service_name"] = value_for_platform(
-  "suse" => {
-    "12.0" => "ntpd",
-    "default" => "ntp"
-  },
+  "suse" => "ntpd",
   "default" => "ntp"
 )
 
