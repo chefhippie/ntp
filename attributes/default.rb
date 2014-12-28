@@ -31,7 +31,7 @@ default["ntp"]["servers"] = %w(
 default["ntp"]["service_name"] = value_for_platform_family(
   "debian" => "ntp",
   "ubuntu" => "ntp",
-  "suse" => "ntp"
+  "suse" => "ntpd"
 )
 
 default["ntp"]["sysconfig_file"] = value_for_platform_family(
