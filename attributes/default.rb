@@ -30,7 +30,6 @@ default["ntp"]["servers"] = %w(
 
 default["ntp"]["service_name"] = value_for_platform_family(
   "debian" => "ntp",
-  "ubuntu" => "ntp",
   "suse" => value_for_platform(
     "opensuse" => {
       "< 13.2" => "ntp",
@@ -45,7 +44,6 @@ default["ntp"]["service_name"] = value_for_platform_family(
 
 default["ntp"]["sysconfig_file"] = value_for_platform_family(
   "debian" => "/etc/default/ntp",
-  "ubuntu" => "/etc/default/ntp",
   "suse" => "/etc/sysconfig/ntp"
 )
 
@@ -55,7 +53,6 @@ default["ntp"]["log_file"] = "/var/log/ntp"
 
 default["ntp"]["drift_file"] = value_for_platform_family(
   "debian" => "/var/lib/ntp/ntp.drift",
-  "ubuntu" => "/var/lib/ntp/ntp.drift",
   "suse" => "/var/lib/ntp/drift/ntp.drift"
 )
 
