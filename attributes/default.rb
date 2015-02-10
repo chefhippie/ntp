@@ -33,12 +33,12 @@ default["ntp"]["service_name"] = value_for_platform_family(
   "ubuntu" => "ntp",
   "suse" => value_for_platform(
     "opensuse" => {
-      ">= 13.2" => "ntpd",
-      "default" => "ntp"
+      "< 13.2" => "ntp",
+      "default" => "ntpd"
     },
     "suse" => {
-      ">= 12" => "ntpd",
-      "default" => "ntp"
+      "< 12" => "ntp",
+      "default" => "ntpd"
     }
   )
 )
