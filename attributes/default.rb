@@ -52,8 +52,8 @@ default["ntp"]["listen"] = "127.0.0.1"
 default["ntp"]["log_file"] = "/var/log/ntp"
 
 default["ntp"]["drift_file"] = value_for_platform_family(
-  "debian" => { "default" => "/var/lib/ntp/ntp.drift" },
-  "suse" => { "default" => "/var/lib/ntp/drift/ntp.drift" }
+  "debian" => "/var/lib/ntp/ntp.drift",
+  "suse" => "/var/lib/ntp/drift/ntp.drift"
 )
 
 default["ntp"]["stats_dir"] = "/var/log/ntpstats"
