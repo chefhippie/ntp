@@ -35,6 +35,9 @@ default["ntp"]["service_name"] = value_for_platform_family(
       "< 13.2" => "ntp",
       "default" => "ntpd"
     },
+    "opensuseleap" => {
+      "default" => "ntpd"
+    },
     "suse" => {
       "< 12" => "ntp",
       "default" => "ntpd"
